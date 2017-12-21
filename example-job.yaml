@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: example-job-dfsdfs
+  annotations:
+    experimental.mattmoor.io/removeme: no-matter
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: "foo"
+        image: gcr.io/cloud-builders/gcloud
+        args: ["version"]

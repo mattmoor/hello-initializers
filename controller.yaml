@@ -1,0 +1,14 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: initializer-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: initializer-controller
+    spec:
+      containers:
+      - name: initializer-controller
+        image: gcr.io/convoy-adapter/hello-initializers/controller:latest
