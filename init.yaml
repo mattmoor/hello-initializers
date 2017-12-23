@@ -13,4 +13,9 @@ initializers:
         apiVersions:
           - "*"
         resources:
-          - jobs
+          # TODO(mattmoor): See this issue
+          # https://github.com/kubernetes/kubernetes/issues/48388
+          #  - jobs
+          - replicasets
+          # - statefulsets
+          # - daemonsets

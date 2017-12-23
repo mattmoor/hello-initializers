@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: example-job-resolve-me
+spec:
+  template:
+    metadata:
+      labels:
+        foo: bar
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: "foo"
+        image: gcr.io/cloud-builders/gcloud
+        args: ["version"]

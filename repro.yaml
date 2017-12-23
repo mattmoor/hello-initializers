@@ -1,0 +1,13 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata: {name: initializer-controller}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels: {app: initializer-controller}
+    spec:
+      containers:
+      - {image: 'gcr.io/mattmoor-public/for-bug-report/deploy-rs-thrashing/gcr.io/convoy-adapter/hello-initializers/controller@sha256:eac6d48cb69041bc07c2a507cf7c0fb0e0e81740057ad8ea4502b5c84012e3a6',
+        name: initializer-controller}
+

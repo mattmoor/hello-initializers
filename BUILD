@@ -7,7 +7,10 @@ py_image(
     name = "controller",
     srcs = ["controller.py"],
     main = "controller.py",
-    deps = [requirement("kubernetes")],
+    deps = [
+        "@containerregistry",
+        requirement("kubernetes")
+    ],
 )
 
 load("@k8s_initializerconfiguration//:defaults.bzl", "k8s_initializerconfiguration")
@@ -31,5 +34,5 @@ load("@k8s_object//:defaults.bzl", "k8s_object")
 
 k8s_object(
     name = "example",
-    template = ":example-job.yaml",
+    template = ":example-deployment.yaml",
 )
